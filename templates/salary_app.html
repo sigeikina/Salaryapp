@@ -1,0 +1,199 @@
+<html>
+  <head>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <title>Salary Calculator</title>
+  </head>
+  <body>
+    <!-- Java Script -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Navbar-->
+    <nav class="navbar navbar-dark bg-dark">
+      <span class="navbar-brand mb-0 h1"
+        >Salary Calculator Prediction Model</span
+      >
+    </nav>
+    <div class="container" style="background-color: rgb(242, 234, 250)">
+      <br />
+      <!--Form-->
+      <form action="{{url_for('predict')}}" method="POST">
+        <fieldset>
+          <legend>Salary Calculator Input Form</legend>
+          <br />
+          <img src="{{url_for('static', filename='1.png')}}" />
+          <img src="{{url_for('static', filename='2.png')}}" />
+          <img src="{{url_for('static', filename='3.png')}}" />
+          <img src="{{url_for('static', filename='4.png')}}" />
+          <img src="{{url_for('static', filename='5.png')}}" />
+          <img src="{{url_for('static', filename='6.png')}}" />
+          <h5>
+            This Flask app takes canditate input such as age, gender, city,
+            position, years of experience, and main technology, then predict the
+            salary of the canditate.
+          </h5>
+          <div
+            class="card card-body"
+            style="background-color: rgb(78, 212, 245)"
+          >
+            <div class="form-group row">
+              <div class="col-sm">
+                <label for="Age">Age</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="Age"
+                  name="Age"
+                  required
+                />
+              </div>
+              <div class="col-sm">
+                <label for="sex">Gender</label>
+                <select class="form-control" id="Gender" name="Gender" required>
+                  <option disabled selected value>
+                    -- Select an Option --
+                  </option>
+                  <option value="Diverse">Diverse</option>
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                </select>
+              </div>
+            </div>
+            <br />
+            <div class="form-group row">
+              <div class="col-sm">
+                <label for="cp">City</label>
+                <select class="form-control" id="City" name="City" required>
+                  <option disabled selected value>
+                    -- Select an Option --
+                  </option>
+                  <option value="Amsterdam">Amsterdam</option>
+                  <option value="Berlin">Berlin</option>
+                  <option value="Cologne">Cologne</option>
+                  <option value="Frankfurt">Frankfurt</option>
+                  <option value="Hamburg">Hamburg</option>
+                  <option value="Munich">Munich</option>
+                  <option value="Stuttgart">Stuttgart</option>
+                </select>
+              </div>
+
+              <div class="col-sm">
+                <label for="pos">Position</label>
+                <select
+                  class="form-control"
+                  id="Position"
+                  name="Position"
+                  required
+                >
+                  <option disabled selected value>
+                    -- Select an Option --
+                  </option>
+                  <option value="Backend Developer">Backend Developer</option>
+                  <option value="Data Engineer">Data Engineer</option>
+                  <option value="Data Scientist">Data Scientist</option>
+                  <option value="Designer (UI/UX)">Designer (UI/UX)</option>
+                  <option value="DevOps">DevOps</option>
+                  <option value="Engineering Manager">
+                    Engineering Manager
+                  </option>
+                  <option value="Frontend Developer">Frontend Developer</option>
+                  <option value="ML Engineer">ML Engineer</option>
+                  <option value="Mobile Developer">Mobile Developer</option>
+                  <option value="Product Manager">Product Manager</option>
+                  <option value="QA Engineer">QA Engineer</option>
+                  <option value="Software Engineer">Software Engineer</option>
+                </select>
+              </div>
+            </div>
+
+            <br />
+            <div class="form-group row">
+              <div class="col-sm">
+                <label for="years">Years of Experience</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="years of experience"
+                  name="years of experience"
+                  required
+                />
+              </div>
+              <div class="col-sm">
+                <label for="occupation">Main Technology </label>
+                <select
+                  class="form-control"
+                  id="main_tech"
+                  name="main_tech"
+                  required
+                >
+                  <option disabled selected value>
+                    -- Select an Option --
+                  </option>
+                  <option value="C#">C#</option>
+                  <option value="C++">C++</option>
+                  <option value="Go">Go</option>
+                  <option value="Java">Java</option>
+                  <option value="JavaScript">JavaScript</option>
+                  <option value="Kotlin">Kotlin</option>
+                  <option value="PHP">PHP</option>
+                  <option value="Python">Python</option>
+                  <option value="Ruby">Ruby</option>
+                  <option value="Scala">Scala</option>
+                  <option value="Swift">Swift</option>
+                  <option value="TypeScript">TypeScript</option>
+                  <option value="iOS">iOS</option>
+                </select>
+              </div>
+            </div>
+            <br />
+
+            <br />
+            <!--Result Button-->
+            <div class="form-group">
+              <input class="btn btn-primary" type="submit" value="Result" />
+            </div>
+
+            <!--Prediction Result-->
+            <div id="result">
+              <strong style="color: rgb(89, 0, 255)">{{result}}</strong>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
